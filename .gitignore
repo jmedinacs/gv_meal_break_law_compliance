@@ -15,9 +15,9 @@ __pycache__/
 *.log
 
 # Ignore data or outputs
-pipeline/data/
-*.csv
-*.xlsx
+#pipeline/data/
+#*.csv
+#*.xlsx
 
 # System files
 .DS_Store
