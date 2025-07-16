@@ -1,0 +1,24 @@
+# Ignore virtual environment
+venv/
+
+# Ignore gv_pipeline
+gv_pipeline/
+
+# Ignore Eclipse-specific files
+.project
+.pydevproject
+.settings/
+
+# Ignore build and cache files
+__pycache__/
+*.py[cod]
+*.log
+
+# Ignore data or outputs
+pipeline/data/
+*.csv
+*.xlsx
+
+# System files
+.DS_Store
+Thumbs.db
