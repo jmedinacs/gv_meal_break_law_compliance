@@ -38,13 +38,18 @@ These outputs are compiled monthly and year-to-date to aid HR policy reviews and
 
 ## Project Summary
 
-This project demonstrates an end-to-end data pipeline designed to evaluate employer compliance with California's meal break law (Labor Code § 512):
+This project delivers a fully automated **Python-based compliance pipeline** that evaluates adherence to California's meal break law (Labor Code § 512). It is designed to scale across months, ensuring consistent monitoring and risk detection for HR and operations teams.
 
-1. **Ingest** raw monthly timecard data  
-2. **Clean** the dataset (ensure integrity, handle missing values)  
-3. **Detect violations** based on lunch timing and waiver status  
-4. **Generate reports** summarizing valid shifts and violations  
-5. **Compile year-to-date metrics** as new monthly data is added  
+The pipeline performs the following steps end-to-end:
+
+1. **Ingest** raw monthly timecard data (`.csv`)
+2. **Clean** the dataset to ensure structural integrity and filter out unusable rows
+3. **Detect violations** based on lunch timing and waiver status, using encoded business logic aligned with California law
+4. **Generate reports** that summarize valid shifts, violations, and their breakdown by type
+5. **Compile year-to-date (YTD) summaries** automatically as each new month's data is processed
+
+This is a **turnkey solution**: once raw data is dropped into the folder, the pipeline handles everything from compliance checks to summary reporting **no manual intervention required**.
+
 
 ### Current Findings – Golden Valley Software
 
@@ -55,10 +60,7 @@ This project demonstrates an end-to-end data pipeline designed to evaluate emplo
 - **Figure 2:** Violation breakdown by type  
 
 **Violation Breakdown:**
-
-- Missed Lunch: **56%**  
-- Late Lunch (with waiver): **43%**  
-- Late Lunch (without waiver): **1%**
+![Violation Summary](report_viz/violation_distribution.png)
 
 These results indicate that Golden Valley Software may be exposed to **significant litigation risk** if compliance is not addressed.
 
