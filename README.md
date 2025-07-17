@@ -1,4 +1,4 @@
-# Golden Valley Software – Meal Break Compliance Evaluation
+# Golden Valley Software Company – Meal Break Compliance Evaluation
 
 This project evluates whether the Golden Valley Software is adhering to California Labor Code § 512(a) using an automated Python pipeline and a Tableau dashboard. The sytem identifies 
 late or missed meal breaks and generates monthly and year-to-date summaries for HR review and compliance risk tracking. 
@@ -43,7 +43,7 @@ These outputs are compiled monthly and year-to-date to aid HR policy reviews and
 
 This project delivers a fully automated **Python-based compliance pipeline** that evaluates adherence to California's meal break law (Labor Code § 512). It is designed to scale across months, ensuring consistent monitoring and risk detection for HR and operations teams.
 
-The pipeline performs the following steps end-to-end:
+The pipeline performs the following end-to-end steps:
 
 1. **Ingest** raw monthly timecard data (`.csv`)
 2. **Clean** the dataset to ensure structural integrity and filter out unusable rows
@@ -51,33 +51,44 @@ The pipeline performs the following steps end-to-end:
 4. **Generate reports** that summarize valid shifts, violations, and their breakdown by type
 5. **Compile year-to-date (YTD) summaries** automatically as each new month's data is processed
 
-This is a **turnkey solution**: once raw data is dropped into the folder, the pipeline handles everything from compliance checks to summary reporting **no manual intervention required**.
+This is a **turnkey solution**: once raw data is dropped into the folder, the pipeline handles everything from compliance checks to 
+summary reporting **no manual intervention required**.
+
+### Golden Valley Software Company
+
+Is a fictional company based in California, the company requested an evaluation of their **California Labor Code § 512(a)** compliance and an assessment 
+of their risk of penalties and litigation.    
+
+Based on our analysis of timecard data from January 2024 to December 2024: 
+1. **4830 valid shifts** were asessed 
+2. **1,955 violations** were found (40% of shifts) 
+3. The monthly violation rate ranges from **23% to 48%**.
+4. **Missed lunch** represented **56%** of all violations.
+5. **43%** of violations were from **late lunch with no waiver**.
+
+![Violation Summary](report_viz/year_to_date_line_graph.png)
+ 
+**Figure 1:** Violation rate by month  
+
+
+![Violation Summary](report_viz/violation_distribution.png)
+
+**Figure 2:** Violation breakdown by type  
+
+These results indicate that a substantial portion of employee shifts do not comply with California Labor Code § 512(a), 
+and may warrant further review by HR or legal counsel to assess potential exposure.
 
 ### Interactive Dashboard
 
 View the full dashboard on Tableau Public -> [Golden Valley – Meal Break Compliance Dashboard](https://public.tableau.com/views/GoldenValleySoftware-BreakLawComplianceSummary/GoldenValleyComplianceDashboard?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 
-### Current Findings – Golden Valley Software
-
-![Violation Summary](report_viz/year_to_date_line_graph.png)
-
-- **40.7%** of employee shifts have resulted in a violation of Labor Code § 512(a).  
-- **Figure 1:** Violation rate by month  
-- **Figure 2:** Violation breakdown by type  
-
-**Violation Breakdown:**
-![Violation Summary](report_viz/violation_distribution.png)
-
-These results indicate that Golden Valley Software may be exposed to **significant litigation risk** if compliance is not addressed.
-
 ### Future Enhancements
 
 Planned improvements include:
 
 - Weekly and daily trend analysis  
-- Employee-level violation frequency  
-- Interactive dashboards with Tableau  
+- Employee-level violation frequency analysis
 
 ## Full Technical Report 
 
@@ -206,13 +217,15 @@ Summary report with fields like:
 |-----------|---------------|------------|--------------|---------------|----------------|-------------------|
 | July 2024 | 400           | 163        | 40.7%        | 92            | 70             | 1                 |
 
-Visuals:  
-- `year_to_date_line_graph.png`  
-- `violation_distribution.png`
+# Author
 
-# More Projects
+**John Medina** is a former mathematics and computer science teacher turned data analyst. 
 
-To see more of my projects and contact information, please see my [website](https://www.jmedina.in)
+For more projects and information:
+- [website](https://www.jmedina.in)
+- [Github](https://www.github.com/jpmedinacs)
+- [Linkedin](https://www.linkedin.com/in/jmedinacs)
+
 
 
 

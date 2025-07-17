@@ -60,6 +60,7 @@ def handle_missing_shift_rows(df, filename="missing_name"):
         else "Missing both", axis=1
     )
 
+    print("Missing shift count: ",len(df_missing))
     # Save excluded rows to a log
     log_missing_shift_rows(df_missing, filename)
 
@@ -140,10 +141,10 @@ def clean_data(filename="missing_name"):
     df = impute_lunch_start(df)
 
     # Optional save: Uncomment when ready to persist cleaned data
-    save_clean_data(df, filename)
+    #save_clean_data(df, filename)
     
     return df
 
 
 if __name__ == '__main__':
-    clean_data("timecards_july_2024")
+    clean_data("timecards_dec_2024")
