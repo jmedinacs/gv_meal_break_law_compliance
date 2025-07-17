@@ -68,6 +68,8 @@ def generate_monthly_violation_report(filename="missing_name"):
     Parameters:
     - filename: Name of the dataset (e.g., 'timecards_june_2024') without the full path
     """
+    print("\nGenerating Monthly Violation Summary Report\n")
+    
     # Step 1: Load processed dataset with violation flags and reasons
     df = load_processed_violation_dataset(filename)
 

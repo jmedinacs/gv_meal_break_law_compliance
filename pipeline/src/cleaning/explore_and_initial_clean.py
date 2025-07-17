@@ -125,6 +125,9 @@ def clean_data(filename="missing_name"):
     Returns:
         None
     """
+    
+    print("\nCleaning Phase Initialized\n")
+    
     # STEP 1: Load raw timecard data
     df = load_raw_data(filename)
 
@@ -141,7 +144,7 @@ def clean_data(filename="missing_name"):
     df = impute_lunch_start(df)
 
     # Optional save: Uncomment when ready to persist cleaned data
-    #save_clean_data(df, filename)
+    save_clean_data(df, filename)
     
     return df
 

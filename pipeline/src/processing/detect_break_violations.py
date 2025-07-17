@@ -67,7 +67,7 @@ def check_for_violation(df):
     # Case 2: No waiver and lunch started too late
     df.loc[
         (df["lunch_needed"]) &
-        (~df["waiver_signed"]) & 
+        (~df["waiver_signed"]) & # Waiver not signed
         (df["lunch_start"] >= df["clock_in"] + pd.Timedelta(hours=5)),
         "violation_reason"
     ] = "late_lunch_no_waiver"
@@ -75,7 +75,7 @@ def check_for_violation(df):
     # Case 3: Waiver signed but lunch still exceeded 6-hour rule
     df.loc[
         (df["lunch_needed"]) & 
-        (df["waiver_signed"]) & 
+        (df["waiver_signed"]) & # Waiver signed
         (df["lunch_start"] > df["clock_in"] + pd.Timedelta(hours=6)),
         "violation_reason"
     ] = "late_lunch_waiver"
@@ -97,6 +97,8 @@ def detect_break_violations(filename="missing_name"):
     4. Flags meal break violations
     5. Saves the processed dataset to the appropriate output folder
     """
+    print("\nDetect Break Violations Phase Initialized\n")
+    
     # Step 1: Load the cleaned dataset (after initial cleaning stage)
     df = load_clean_data(filename)
     
@@ -105,8 +107,6 @@ def detect_break_violations(filename="missing_name"):
     
     # Step 3: Quick structure and null check (for transparency)
     cleaning.inspect_data(df)
-    
-
     
     # Step 3: Add a new column for total shift length
     df = compute_shift_length(df)

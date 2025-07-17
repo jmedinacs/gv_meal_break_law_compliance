@@ -41,7 +41,7 @@ These outputs are compiled monthly and year-to-date to aid HR policy reviews and
 
 ## Project Summary
 
-This project delivers a fully automated **Python-based compliance pipeline** that evaluates adherence to California's meal break law (Labor Code § 512). It is designed to scale across months, ensuring consistent monitoring and risk detection for HR and operations teams.
+This project delivers a fully automated **Python-based compliance pipeline** that evaluates adherence to California's Meal Periods law (Labor Code § 512). It is designed to scale across months, ensuring consistent monitoring and risk detection for HR and operations teams.
 
 The pipeline performs the following end-to-end steps:
 

@@ -39,6 +39,8 @@ def compile_ytd_violation_summary(report_year="missing_year",report_folder="../.
         pd.DataFrame: Combined summary DataFrame.
     """
     
+    print("\nCompiling YTD Report to Include NEW Data\n")
+    
     all_summaries = []
     
     for fname in os.listdir(report_folder):
