@@ -52,7 +52,7 @@ This is a **turnkey solution**: once raw data is dropped into the folder, the pi
 
 ### Interactive Dashboard
 
-View the full dashboard on Tableau Public 👉 [Golden Valley – Meal Break Compliance Dashboard](https://public.tableau.com/views/GoldenValleySoftware-BreakLawComplianceSummary/GoldenValleyComplianceDashboard?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+View the full dashboard on Tableau Public -> [Golden Valley – Meal Break Compliance Dashboard](https://public.tableau.com/views/GoldenValleySoftware-BreakLawComplianceSummary/GoldenValleyComplianceDashboard?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 
 ### Current Findings – Golden Valley Software
