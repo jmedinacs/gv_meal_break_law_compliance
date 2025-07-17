@@ -1,5 +1,8 @@
 # Golden Valley Software – Meal Break Compliance Evaluation
 
+This project evluates whether the Golden Valley Software is adhering to California Labor Code § 512(a) using an automated Python pipeline and a Tableau dashboard. The sytem identifies 
+late or missed meal breaks and generates monthly and year-to-date summaries for HR review and compliance risk tracking. 
+
 ## California Meal Break Law Overview
 
 Under **California Labor Code § 512(a)** and applicable **Wage Orders**:
@@ -78,11 +81,11 @@ Planned improvements include:
 
 ## Full Technical Report 
 
-This is the **full technical report** that contains a detailed report of the components of the **pipeline**. 
+This section contains the **full technical explanation** of the pipeline components. 
 
 ### Dataset 
 
-The dataset for this project was generated to simulate a company timecard sytem that contains information about employee work shifts and time-realted data. The dataset contains some **missing values** to simulate real world scenario.
+The dataset for this project was generated to simulate a company timecard system that contains information about employee work shifts and time-related data. The dataset contains some **missing values** to simulate real world scenario.
 
 ![Data Overview](report_viz/gv_data_info.png)
 
@@ -106,7 +109,7 @@ This project is a **Python-based pipeline** that was created to automate the cle
 
 **Compile Year-to-Date Dataset**
 1. Compile the monthly reports into one database (uses saved report)
-2. Update the Tableau dahsboard using the new ytd report. 
+2. Update the Tableau dashboard using the new ytd report. 
 
 
 
@@ -206,6 +209,11 @@ Summary report with fields like:
 Visuals:  
 - `year_to_date_line_graph.png`  
 - `violation_distribution.png`
+
+# More Projects
+
+To see more of my projects and contact information, please see my [website](https://www.jmedina.in)
+
 
 
 
