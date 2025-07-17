@@ -40,7 +40,7 @@ def main():
     - Compiles an updated year-to-date (YTD) summary
     """
     # Set the target file name (exclude '.csv' extension)
-    filename = "timecards_dec_2024"
+    filename = "timecards_july_2024"
 
     # Step 1: Clean the raw timecard data
     clean_data(filename)

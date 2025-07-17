@@ -1,9 +1,9 @@
-# Golden Valley Software Company – Meal Break Compliance Evaluation
+# Golden Valley Software Company – Meal Periods Compliance Evaluation
 
 This project evluates whether the Golden Valley Software is adhering to California Labor Code § 512(a) using an automated Python pipeline and a Tableau dashboard. The sytem identifies 
 late or missed meal breaks and generates monthly and year-to-date summaries for HR review and compliance risk tracking. 
 
-## California Meal Break Law Overview
+## California Meal Periods Law Overview
 
 Under **California Labor Code § 512(a)** and applicable **Wage Orders**:
 
@@ -56,7 +56,7 @@ summary reporting **no manual intervention required**.
 
 ### Golden Valley Software Company
 
-Is a fictional company based in California, the company requested an evaluation of their **California Labor Code § 512(a)** compliance and an assessment 
+Is a fictional company based in California, employees at this company have a work shift of up to **8 hours**. The company requested an evaluation of their **California Labor Code § 512(a)** compliance and an assessment 
 of their risk of penalties and litigation.    
 
 Based on our analysis of timecard data from January 2024 to December 2024: 
