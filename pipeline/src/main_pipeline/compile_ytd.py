@@ -50,7 +50,7 @@ def compile_ytd_violation_summary(report_year="missing_year",report_folder="../.
         print("No violation reports found.")
         return None 
     
-    output_path = os.path.join(output_path,f"{report_year}_report_compiled.csv")
+    output_path = os.path.join(output_path,"ytd_report_compiled.csv")
     ytd_df = pd.concat(all_summaries, ignore_index=True) 
     ytd_df.to_csv(output_path, index=False)
     print("YTD Summary saved to: yearly_report folder.")

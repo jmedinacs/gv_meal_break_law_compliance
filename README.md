@@ -51,6 +51,8 @@ The pipeline performs the following steps end-to-end:
 This is a **turnkey solution**: once raw data is dropped into the folder, the pipeline handles everything from compliance checks to summary reporting **no manual intervention required**.
 
 
+View the Tableau ![Dashboard](https://public.tableau.com/views/GoldenValleySoftware-BreakLawComplianceSummary/GoldenValleyComplianceDashboard?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
 ### Current Findings – Golden Valley Software
 
 ![Violation Summary](report_viz/year_to_date_line_graph.png)

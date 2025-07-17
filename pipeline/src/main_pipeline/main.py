@@ -57,7 +57,7 @@ def main():
     print(tabulate(df.head(10), headers="keys", tablefmt="fancy_grid"))
 
     # Step 5: Recompile the year-to-date report with the latest month included
-    compile_ytd_violation_summary()
+    compile_ytd_violation_summary("2024")
 
 
 if __name__ == '__main__':
