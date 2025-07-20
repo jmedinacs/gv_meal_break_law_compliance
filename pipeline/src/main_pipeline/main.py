@@ -24,6 +24,7 @@ from processing.detect_break_violations import detect_break_violations
 from processing.violation_summary_report import generate_monthly_violation_report
 from data_utils.data_io import load_violation_summary
 from main_pipeline.compile_ytd import compile_ytd_violation_summary
+from processing.employee_level_violation import process_employee_level_analysis
 
 from tabulate import tabulate
 import os
@@ -40,7 +41,7 @@ def main():
     - Compiles an updated year-to-date (YTD) summary
     """
     # Set the target file name (exclude '.csv' extension)
-    filename = "timecards_june_2024"
+    filename = "timecards_feb_2024"
 
     # Step 1: Clean the raw timecard data
     clean_data(filename)
@@ -58,6 +59,10 @@ def main():
 
     # Step 5: Recompile the year-to-date report with the latest month included
     compile_ytd_violation_summary("2024")
+    
+    # Step 6: Process employee-level violation dataset (detailed and aggregated)
+    process_employee_level_analysis(filename)
+    
 
 
 if __name__ == '__main__':

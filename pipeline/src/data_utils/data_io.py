@@ -1,19 +1,26 @@
 """
 data_io.py
 
-Handles all file input/output operations for the Golden Valley Break Risk Pipeline.
+Handles all input/output operations for the Golden Valley Break Risk Pipeline.
 
-This module centralizes the loading and saving of:
-- Raw data (original timecards)
-- Cleaned data (after initial preprocessing)
-- Processed data with violation flags
-- Monthly summary reports
-- Logs of rows with missing shift times (for client follow-up)
+This module centralizes the loading and saving of all datasets and reports used 
+throughout the meal break compliance workflow, including:
 
-All paths are standardized and relative to the repo's structure for easy portability.
+- Raw timecard data
+- Cleaned datasets (with standard formatting and missing value handling)
+- Processed data with computed violations (e.g., shift length, waiver status)
+- Monthly violation summary reports
+- Employee-level reports (both detailed and aggregated)
+- Logs for incomplete records (e.g., missing clock-in/clock-out)
+
+All file paths are relative to a standardized project directory structure to 
+ensure modularity and portability across clients.
+
+This separation of I/O logic ensures cleaner pipelines, easier testing, and 
+centralized maintenance.
 
 Author: John Medina
-Date: July 15, 2025
+Created: July 15, 2025
 """
 
 import os
@@ -120,6 +127,69 @@ def load_violation_summary(filename="missing_name"):
     print(f"{filename}_violation_report.csv loaded!")
     return df
 
+def load_detailed_employee_violation_dataset(filename="missing_name"):
+    """
+    Load a detailed (row-level) employee violation dataset for a given month.
+
+    This function reads a CSV file from the 'detailed' report folder containing
+    individual timecard records where a violation was flagged. Each row typically
+    represents a shift and includes metadata such as clock times, waiver status, 
+    and violation reason.
+
+    Args:
+        filename (str): Base name of the file (e.g., 'apr_2024'). Do not include extensions.
+
+    Returns:
+        pd.DataFrame: DataFrame with detailed violation records for that month.
+
+    Raises:
+        FileNotFoundError: If the expected CSV file is not found in the directory.
+    """
+    basepath = "../../report/employee_level_violation_report/detailed"
+
+    if not os.path.exists(basepath):
+        raise FileNotFoundError(f"{filename}_employee_violation_report.csv not found!")
+
+    filepath = os.path.join(basepath, f"{filename}_employee_violation_report.csv")
+    df = pd.read_csv(filepath)
+
+    if df.shape[1] == 1:
+        df = df.squeeze()
+
+    print(f"{filename}_employee_violation_report.csv loaded!")
+    return df
+
+def load_aggregated_employee_violation_dataset(filename="missing_name"):
+    """
+    Load an aggregated (employee-level) violation summary for a given month.
+
+    This function reads a CSV file from the 'aggregated' report folder containing
+    violation counts per employee. Each row summarizes how many times an employee 
+    triggered each type of violation during the selected month.
+
+    Args:
+        filename (str): Base name of the file (e.g., 'apr_2024'). Do not include extensions.
+
+    Returns:
+        pd.DataFrame: DataFrame containing one row per employee with violation counts.
+
+    Raises:
+        FileNotFoundError: If the expected CSV file is not found in the directory.
+    """
+    basepath = "../../report/employee_level_violation_report/aggregated"
+
+    if not os.path.exists(basepath):
+        raise FileNotFoundError(f"{filename}_aggregated_employee_violation_report.csv not found!")
+
+    filepath = os.path.join(basepath, f"{filename}_aggregated_employee_violation_report.csv")
+    df = pd.read_csv(filepath)
+
+    if df.shape[1] == 1:
+        df = df.squeeze()
+
+    print(f"{filename}_aggregated_employee_violation_report.csv loaded!")
+    return df
+
 
 def save_clean_data(df, filename="missing_name"):
     """
@@ -202,6 +272,51 @@ def save_violation_summary(df_summary, filename="missing_name"):
     df_summary.to_csv(output_path, index=False)
 
     print(f"{filename}_violation_report saved to monthly violation report folder")
+    
+def save_detailed_employee_violation_report(df,filename="missing_name"):
+    """
+    Save the detailed (row-level) employee violation DataFrame to a CSV file.
+
+    This function writes the provided DataFrame to the `detailed` subfolder 
+    inside the `employee_level_violation_report` directory. The file includes 
+    one row per shift where a violation occurred, with full context for HR or audit review.
+
+    Args:
+        df (pd.DataFrame): The DataFrame containing row-level violation records.
+        filename (str): The base name for the output file (e.g., 'apr_2024').
+
+    Returns:
+        None
+    """
+    output_path = f"../../report/employee_level_violation_report/detailed/{filename}_employee_violation_report.csv"
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+    df.to_csv(output_path, index=False)
+
+    print(f"{filename}_employee_violation_report saved to detailed employee level report folder")
+    
+def save_aggregated_employee_violation_report(df,filename="missing_name"):
+    """
+    Save the aggregated (employee-level summary) violation DataFrame to a CSV file.
+
+    This function writes the provided DataFrame to the `aggregated` subfolder 
+    inside the `employee_level_violation_report` directory. Each row in the 
+    output summarizes violation counts for an individual employee.
+
+    Args:
+        df (pd.DataFrame): The DataFrame containing aggregated violation counts per employee.
+        filename (str): The base name for the output file (e.g., 'apr_2024').
+
+    Returns:
+        None
+    """
+    output_path = f"../../report/employee_level_violation_report/aggregated/{filename}_aggregated_employee_violation_report.csv"
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+    df.to_csv(output_path, index=False)
+
+    print(f"{filename}_aggregated_employee_violation_report saved to aggregated employee level report folder")
+    
 
 
 if __name__ == '__main__':
