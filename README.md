@@ -84,8 +84,8 @@ View the full dashboard on Tableau Public -> [Golden Valley – Meal Break Compl
 
 ### Recommendations based on insights:
 **99%** of the violations were **missed lunch** and **late lunch with no waiver**. The following actions may be considered to address the situation:
-- **Employee Meal Period Retraining:** Ensure that employees are aware or reminded of their right to am eal break **before the 5th hour of work**. Emphasize that if they have not signed a waiver and are working a 5-hour shift, they must take a timely meal period break.
-- **Waiver Informational Meeting:** Clarify the purpose and implicaitons of a meal period waiver, specifically for shifts of **6 hours or less**. Emphasize that waivers must be voluntary and mutually agreed upon.
+- **Employee Meal Period Retraining:** Ensure that employees are aware or reminded of their right to a meal break **before the 5th hour of work**. Emphasize that if they have not signed a waiver and are working a 5-hour shift, they must take a timely meal period break.
+- **Waiver Informational Meeting:** Clarify the purpose and implications of a meal period waiver, specifically for shifts of **6 hours or less**. Emphasize that waivers must be voluntary and mutually agreed upon.
 - **Employee Lunch Scheduling:** Carefully schedule and document meal periods so they begin **before** the end of the fifth hour of work (i.e. 4h:59m:59s), unless a waiver is signed and the shift is **no more than 6 hours**. In that case, an employee may waive their meal period or take a meal period at least **30 minutes before the end of shift** to remain compliant.  
 
 
