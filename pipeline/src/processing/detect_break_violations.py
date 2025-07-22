@@ -85,6 +85,15 @@ def check_for_violation(df):
     
     return df 
 
+def check_missed_lunch_five_hour_shift(df):
+    """ """
+    missed_lunch_5hr_count = df[
+        (df["violation_reason"]== "missed_lunch") &
+        (df["shift_length_minutes"]==300)
+    ].shape[0]
+    
+    print(f"5-hour shifts with missed lunch: {missed_lunch_5hr_count}")
+
 
 def detect_break_violations(filename="missing_name"):
     """
@@ -119,7 +128,10 @@ def detect_break_violations(filename="missing_name"):
     
     # Optional: Re-inspect to confirm post-processing structure
     cleaning.inspect_data(df)
+    
+    #
+    check_missed_lunch_five_hour_shift(df)
 
 
 if __name__ == '__main__':
-    detect_break_violations("timecards_june_2024")
+    detect_break_violations("timecards_dec_2024")
