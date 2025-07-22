@@ -86,13 +86,27 @@ def check_for_violation(df):
     return df 
 
 def check_missed_lunch_five_hour_shift(df):
-    """ """
+    """
+    Counts the number of missed lunch violations that occurred on exactly 5-hour shifts.
+
+    This function helps assess whether employees may be misunderstanding 
+    the meal period requirement for 5-hour shifts. Under California law, 
+    a meal period is still required unless a valid waiver is signed.
+
+    Parameters:
+        df (pd.DataFrame): The processed timecard dataset containing 
+            'violation_reason' and 'shift_length_minutes' columns.
+
+    Returns:
+        None
+    """
+
     missed_lunch_5hr_count = df[
         (df["violation_reason"]== "missed_lunch") &
         (df["shift_length_minutes"]==300)
     ].shape[0]
     
-    print(f"5-hour shifts with missed lunch: {missed_lunch_5hr_count}")
+    print(f"\n5-hour shifts with missed lunch: {missed_lunch_5hr_count}")
 
 
 def detect_break_violations(filename="missing_name"):
@@ -129,7 +143,7 @@ def detect_break_violations(filename="missing_name"):
     # Optional: Re-inspect to confirm post-processing structure
     cleaning.inspect_data(df)
     
-    #
+    # Check if 5-hour shifts with missed lunch are significantly represented
     check_missed_lunch_five_hour_shift(df)
 
 

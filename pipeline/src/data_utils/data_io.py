@@ -317,6 +317,28 @@ def save_aggregated_employee_violation_report(df,filename="missing_name"):
 
     print(f"{filename}_aggregated_employee_violation_report saved to aggregated employee level report folder")
     
+def save_employee_level_ytd(df,filename="missing_name"):
+    """
+    Saves the year-to-date (YTD) employee-level violation summary to a CSV file.
+
+    This function writes the provided aggregated DataFrame to the 
+    'employee_ytd' subfolder inside the 'yearly_report' directory. 
+    Each row in the output summarizes total violations per employee across all months.
+
+    Parameters:
+        df (pd.DataFrame): DataFrame containing YTD violation counts per employee.
+        filename (str): Base name for the output file (e.g., '2024').
+
+    Returns:
+        None
+    """
+    output_path = f"../../report/yearly_report/employee_ytd/{filename}_employee_ytd_report.csv"
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+    df.to_csv(output_path, index=False)
+
+    print(f"{filename}_employee_ytd_report saved to employee ytd folder")
+    
 
 
 if __name__ == '__main__':

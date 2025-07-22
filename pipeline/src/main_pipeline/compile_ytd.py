@@ -27,7 +27,7 @@ import os
 from data_utils.data_io import load_violation_summary 
 
 
-def compile_ytd_violation_summary(report_year="missing_year",report_folder="../../report/monthly_violation_report", output_path ="../../report/yearly_report/2024"):
+def compile_ytd_violation_summary(ytd_filename="missing_year",report_folder="../../report/monthly_violation_report", output_path ="../../report/yearly_report/company_ytd"):
     """
     Compiles all monthly *_violation_report.csv files into a single YTD summary.
 
@@ -52,7 +52,7 @@ def compile_ytd_violation_summary(report_year="missing_year",report_folder="../.
         print("No violation reports found.")
         return None 
     
-    output_path = os.path.join(output_path,"ytd_report_compiled.csv")
+    output_path = os.path.join(output_path,f"{ytd_filename}_ytd_report_compiled.csv")
     ytd_df = pd.concat(all_summaries, ignore_index=True) 
     ytd_df.to_csv(output_path, index=False)
     print("YTD Summary saved to: yearly_report folder.")
